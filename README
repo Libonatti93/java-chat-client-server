@@ -1,0 +1,26 @@
+Simple client-server chat system in Java, we will develop a project that includes:
+
+Chat Server: Manages connections from multiple clients and relays messages between them.
+Chat Client: User interface for clients to connect to the server and exchange messages.
+Project Structure
+Chat Server: A multithreaded server that accepts connections from clients and relays messages to all connected clients.
+Chat Client: A client with a command-line interface that connects to the server and allows sending and receiving messages.
+
+Code Explanation
+Chat Server (ChatServer.java):
+
+The server listens on the specified port for new client connections.
+Each client is handled by an instance of ClientHandler in a separate thread.
+Messages received from a client are relayed to all other connected clients using the broadcastMessage method.
+The server maintains a pool of connected clients to manage active connections.
+Chat Client (ChatClient.java):
+
+The client connects to the server on the specified port.
+The user is prompted to enter his or her name, which is sent to the server.
+The client has a dedicated thread for listening for messages from the server and another for sending messages typed by the user.
+The received messages are displayed on the command line.
+How to Run the Project
+Compile both files (ChatServer.java and ChatClient.java).
+First, start the server by running ChatServer.
+Next, start the client by running ChatClient. You can start multiple clients to simulate a conversation between multiple users.
+Each client must enter its name when connecting, and then can begin sending messages.
